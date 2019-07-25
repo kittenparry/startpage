@@ -1,0 +1,36 @@
+- [ ] reddit.com
+- [ ] /r/KaylaErinCosplay/new/
+- [ ] /r/Fay_Suicide/new/
+- [ ] /r/DotA2
+- [ ] /r/coolgithubprojects/
+- [ ] /r/suicidegirls ?
+- [ ] /r/DataHoarder
+- [ ] /r/2meirl4meirl
+- [ ] /r/unixporn
+- [ ] rarbg.to ?
+- [ ] 4chan.org ?
+- [ ] /t/ ?
+- [ ] gmail
+- [ ] keep.google
+- [ ] drive.google ?
+- [ ] stackexchange
+- [ ] trakt.tv
+- [ ] youtube
+- [ ] steam
+- [ ] en.metal-tracker.com
+- [ ] github
+- [ ] twitch
+- [ ] instagram
+- [ ] chaturbate ?
+- [ ] nyaa.si
+- [ ] nhentai.net ?
+- [ ] hanime.tv ?
+- [ ] popmundo ?
+- [ ] suicidegirls.com ?
+- [ ] f95zone ?
+- [ ] yiff.party
+- [ ] pornbay.org
+- [ ] tumblr ?
+
+So many NSFW links........ I don't think this would be that suited to share on /r/startpages.
+
