@@ -1,11 +1,39 @@
-body {
-	background-color: #fdf6e3;
-	color: #586e75;
-	font-family: Tahoma, Geneva, sans-serif;
-	line-height: 1.4;
-	min-height: 100%;
+html {
 	height: 100%;
 }
-.center {
-	text-align: center;
+
+body {
+	background: #000 url('../assets/wallpaper.jpg') no-repeat bottom right;
+	color: #586e75;
+	font-family: 'Courier New', Courier, monospace;
+	line-height: 1.4;
+	min-height: 98%;
+	height: 98%;
+}
+
+#terminal {
+	height: 40%;
+	width: 40%;
+	border: 1px solid #586e75;
+	background-color: #fdf6e3;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	box-shadow: 10px 10px 5px rgba(0, 0, 0, .5);
+}
+
+#search-input {
+	background: none;
+	display: inline;
+	border: none;
+	width: 80%;
+	font-size: 1em;
+	font-family: 'Courier New', Courier, monospace;
+}
+
+#search-input:focus {
+	outline: none;
 }
