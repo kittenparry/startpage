@@ -1,0 +1,11 @@
+body {
+	background-color: #fdf6e3;
+	color: #586e75;
+	font-family: Tahoma, Geneva, sans-serif;
+	line-height: 1.4;
+	min-height: 100%;
+	height: 100%;
+}
+.center {
+	text-align: center;
+}
