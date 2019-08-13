@@ -14,15 +14,10 @@ body {
 #terminal {
 	height: 40%;
 	width: 40%;
-	border: 1px solid #586e75;
-	background-color: #fdf6e3;
-	position: absolute;
 	left: 0;
 	right: 0;
 	top: 0;
 	bottom: 0;
-	margin: auto;
-	box-shadow: 10px 10px 5px rgba(0, 0, 0, .5);
 }
 
 #search-input {
@@ -31,9 +26,50 @@ body {
 	border: none;
 	width: 80%;
 	font-size: 1em;
+	color: #586e75;
 	font-family: 'Courier New', Courier, monospace;
+	cursor: default;
+}
+
+.some-pad {
+	padding-top: 0.5em;
+	padding-left: 0.5em;
 }
 
 #search-input:focus {
 	outline: none;
+}
+
+#search-suggestions {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+table {
+	border-spacing: 1em 0;
+	cursor: default;
+}
+
+.display-div {
+	border: 1px solid #586e75;
+	background-color: #fdf6e3;
+	position: absolute;
+	box-shadow: 10px 10px 5px rgba(0, 0, 0, .5);
+	margin: auto;
+	overflow: hidden;
+}
+
+#div-sites {
+	height: 36%;
+	width: 15%;
+	left: 10%;
+	top: 5%;
+}
+
+#div-subs {
+	height: 25%;
+	width: 15%;
+	left: 10%;
+	top: 45%;
 }

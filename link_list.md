@@ -1,26 +1,26 @@
-- [ ] reddit.com
-- [ ] /r/KaylaErinCosplay/new/
-- [ ] /r/Fay_Suicide/new/
-- [ ] /r/DotA2
-- [ ] /r/coolgithubprojects/
-- [ ] /r/suicidegirls ?
-- [ ] /r/DataHoarder
-- [ ] /r/2meirl4meirl
-- [ ] /r/unixporn
-- [ ] rarbg.to ?
-- [ ] 4chan.org ?
+- [x] reddit.com
+- [x] /r/KaylaErinCosplay/new/
+- [x] /r/Fay_Suicide/new/
+- [x] /r/DotA2
+- [x] /r/coolgithubprojects/
+- [x] /r/suicidegirls ?
+- [x] /r/DataHoarder
+- [x] /r/2meirl4meirl
+- [x] /r/unixporn
+- [x] rarbg.to ?
+- [x] 4chan.org ?
 - [ ] /t/ ?
-- [ ] gmail
-- [ ] keep.google
-- [ ] drive.google ?
+- [x] gmail
+- [x] keep.google
+- [x] drive.google ?
 - [ ] stackexchange
-- [ ] trakt.tv
-- [ ] youtube
-- [ ] steam
-- [ ] en.metal-tracker.com
-- [ ] github
-- [ ] twitch
-- [ ] instagram
+- [x] trakt.tv
+- [x] youtube
+- [x] steam
+- [x] en.metal-tracker.com
+- [x] github
+- [x] twitch
+- [x] instagram
 - [ ] chaturbate ?
 - [ ] nyaa.si
 - [ ] nhentai.net ?

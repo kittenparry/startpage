@@ -8,11 +8,17 @@
 </head>
 
 <body>
-	<div id='terminal'>
-		<form>
-			[edvin@ ~]$ <input id='search-input' title='search' type='text' autofocus='autofocus' />
+	<div id='terminal' class='display-div'>
+		<form autocomplete='off' id='search-form' class='some-pad'>
+			[edvin@ ~]$ <input id='search-input' title='search' type='text' autofocus='autofocus' autocomplete='off' />
 			<ul id='search-suggestions'></ul>
 		</form>
+	</div>
+	<div id='div-sites' class='display-div'>
+		<div class='some-pad' id='list-sites'></div>
+	</div>
+	<div id='div-subs' class='display-div'>
+		<div class='some-pad' id='list-subs'></div>
 	</div>
 
 	<script src='script/script.js'></script>
