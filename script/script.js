@@ -52,8 +52,8 @@ document.getElementById('search-form').addEventListener('submit', e => {
 				} else {
 					sub = skey[1];
 				}
+				window.location = `https://www.reddit.com/r/${sub}/${app}`;
 			}
-			window.location = `https://www.reddit.com/r/${sub}/${app}`;
 		} else if (key == '') {
 
 		} else {
