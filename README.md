@@ -1,4 +1,7 @@
 # startpage
+
+Preview [on GitHub Pages](https://kittenparry.github.io/startpage/)!
+
 * Visit registered sites with their shortened names (eg. `t` for `twitch`)
 * Visit registered subreddits with their shortened names (eg. `r u` for `reddit.com/unixporn`)
 	* `r $sub`, visit with shortened name, if `$sub` exists in the dictionary,
