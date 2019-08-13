@@ -114,6 +114,7 @@ pump_sites = () => {
 	let list_sites = `<table><th colspan='2'>sites</th>`;
 	for (key in dict_sites) {
 		let site = '';
+		// different split for metal-tracker and steam
 		if (key == 'e' || key == 's') {
 			site = dict_sites[key].split('.')[1];
 		} else {
