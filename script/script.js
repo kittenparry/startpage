@@ -7,14 +7,22 @@ document.getElementById('search-input').addEventListener('input', e => {
 	} else if (key.split(' ')[0] == 'r' || key.split(' ')[0] == 'rn') {
 		let skey = key.split(' ');
 		let sub = '';
+		let pre = '';
+		if (skey[0] == 'rn') {
+			pre = 'reddit:new/';
+		} else {
+			pre = 'reddit/';
+		}
 		if (skey[1]) {
 			if (Object.keys(dict_reddit).includes(skey[1])) {
 				sub = dict_reddit[skey[1]];
 			} else {
 				sub = skey[1];
 			}
+			list.push(`${pre}${sub}`);
+		} else {
+			list.push(`${pre}..`);
 		}
-		list.push(`${skey[0]}:\t${sub}`);
 	} else if (key == '') {
 
 	} else {
