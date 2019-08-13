@@ -3,7 +3,8 @@ html {
 }
 
 body {
-	background: #000 url('../assets/wallpaper.jpg') no-repeat bottom right;
+	background: #000 url('../assets/wallpaper.jpg') no-repeat center;
+	background-size: cover;
 	color: #586e75;
 	font-family: 'Courier New', Courier, monospace;
 	line-height: 1.4;
