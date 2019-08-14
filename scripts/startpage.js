@@ -62,9 +62,11 @@ document.getElementById('search-form').addEventListener('submit', e => {
 		if (Object.keys(dict_services).includes(key)) {
 			let url = dict_services[key].split('|')[1];
 			window.location = `${url}`;
+		} else if (Object.keys(dict_sites).includes(key)) {
+			window.location = `https://${dict_sites[key]}`;
 		} else if (curSearch) {
-            window.location = curSearch;
-        }
+            		window.location = curSearch;
+        	}
 	} catch (e) {
 		console.log(e);
 	}
