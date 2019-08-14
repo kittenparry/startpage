@@ -1,0 +1,75 @@
+html {
+	height: 100%;
+}
+
+body {
+	font-family: "Courier New", Courier, monospace, sans-serif;
+	background: #000 url("../images/wallpaper.jpg") no-repeat center;
+	background-size: cover;
+	color: #586e75;
+	min-height: 98%;
+	height: 98%;
+}
+
+ul {
+	list-style: none;
+}
+ol {
+	list-style: none;
+}
+ol, ul {
+	padding: 0;
+	margin: 0;
+}
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+	margin: 0.5 0 0.5rem 0.5rem;
+	font-size: 90%;
+}
+li {
+	margin-bottom: 0;
+}
+
+span.key {
+	display: inline-block;
+	width: 2.5em;
+	margin-right: 0.5em;
+	text-align: right;
+}
+
+h5, h6 {
+	margin: 0;
+	padding-left: 3em;
+	font-weight: bold;
+	font-size: 1.6rem;
+	line-height: 1.6; 
+	letter-spacing: 0;
+}
+
+#search-input {
+	background: none;
+	display: inline;
+	width: 70%;
+	border: none;
+	font-size: 1em;
+	color: #fff;
+	cursor: default;
+	overflow: visible;
+}
+
+#search-input::placeholder {
+	color: #a8b8bd;
+}
+
+#search-input:focus {
+	outline: none;
+}
+
+#div-services, #div-sites, #div-subs, #terminal {
+	border: 1px solid #586e75;
+	background-color: rgba(256, 246, 227, 0.95);
+	margin-bottom: 0.5em;
+	padding: 0.5em;
+}

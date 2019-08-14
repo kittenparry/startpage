@@ -1,8 +1,14 @@
 document.getElementById('search-input').addEventListener('input', e => {
 	let key = e.target.value;
 	let list = [];
+	let result = [];
 
-	if (Object.keys(dict_sites).includes(key)) {
+	if (Object.keys(dict_services).includes(key)) {
+		result.push(get_key_by_val(dict_services, dict_services[key]));
+		result.push(dict_services[key].split('|')[0], dict_services[key].split('|')[1]);
+
+		list.push(`${result[0]}:\t${result[1]} (${result[2]})`);
+	} else if (Object.keys(dict_sites).includes(key)) {
 		list.push(`${get_key_by_val(dict_sites, dict_sites[key])}:\t${dict_sites[key]}`);
 	} else if (key.split(' ')[0] == 'r' || key.split(' ')[0] == 'rn') {
 		let skey = key.split(' ');
@@ -36,7 +42,8 @@ document.getElementById('search-input').addEventListener('input', e => {
 	document.getElementById('search-suggestions').innerHTML = body;
 });
 
-// if exists in the dictionary, visit the website on enter
+// if exists in services, split out url and visit
+// if exists in links, visit the url
 // else if starts with r or rn, check reddit dictionary
 // else visit the written sub,
 // else search on duckduckgo
@@ -45,7 +52,10 @@ document.getElementById('search-form').addEventListener('submit', e => {
 	let key = document.getElementById('search-input').value;
 
 	try {
-		if (Object.keys(dict_sites).includes(key)) {
+		if (Object.keys(dict_services).includes(key)) {
+			let url = dict_services[key].split('|')[1];
+			window.location = `${url}`;
+		} else if (Object.keys(dict_sites).includes(key)) {
 			window.location = `https://${dict_sites[key]}`;
 		} else if (key.split(' ')[0] == 'r' || key.split(' ')[0] == 'rn') {
 			let skey = key.split(' ');
@@ -77,41 +87,24 @@ document.body.addEventListener('click', e => {
 	document.getElementById('search-input').focus();
 });
 
-// input: url
-dict_sites = {
-	'4': '4chan.org',
-	'd': 'drive.google.com',
-	'e': 'en.metal-tracker.com',
-	'g': 'github.com',
-	'gm': 'gmail.com',
-	'i': 'instagram.com',
-	'k': 'keep.google.com',
-	'r': 'reddit.com',
-	'ra': 'rarbg.to/torrents.php?category=2;4',
-	's': 'store.steampowered.com',
-	't': 'twitch.tv',
-	'tr': 'trakt.tv',
-	'y': 'youtube.com',
-};
-
-// input: sub
-dict_reddit = {
-	'2': '2meirl4meirl',
-	'c': 'coolgithubprojects',
-	'd': 'Dota2',
-	'da': 'DataHoarder',
-	'f': 'Fay_Suicide',
-	'k': 'KaylaErinCosplay',
-	's': 'suicidegirls',
-	'u': 'unixporn',
-};
-
 // print sites to the view
 pump_sites = () => {
+	let dom_services = document.getElementById('list-services');
 	let dom_sites = document.getElementById('list-sites');
 	let dom_subs = document.getElementById('list-subs');
 
-	let list_sites = `<table><th colspan='2'>sites</th>`;
+	let list_services = `<ul>`;
+	for (key in dict_services) {
+		let service = '';
+
+		service = dict_services[key].split('|')[0];
+
+		list_services += `<li><span class="key">${key}:</span>${service}</li>`;
+	}
+	list_services += '</ul>';
+	dom_services.innerHTML += list_services;
+
+	let list_sites = `<ul>`;
 	for (key in dict_sites) {
 		let site = '';
 		// different split for metal-tracker and steam
@@ -120,18 +113,18 @@ pump_sites = () => {
 		} else {
 			site = dict_sites[key].split('.')[0]
 		}
-		list_sites += `<tr><td>${key}:</td><td>${site}</td></tr>`;
+		list_sites += `<li><span class="key">${key}:</span>${site}</li>`;
 	}
-	list_sites += '</table>';
-	dom_sites.innerHTML = list_sites;
+	list_sites += '</ul>';
+	dom_sites.innerHTML += list_sites;
 
-	list_subs = `<table><th colspan='2'>reddit</th>`;
+	list_subs = `<ul>`;
 	for (key in dict_reddit) {
 		let sub = dict_reddit[key];
-		list_subs += `<tr><td>${key}:</td><td>${sub}</td></tr>`;
+		list_subs += `<li><span class="key">${key}:</span>${sub}</li>`;
 	}
-	list_subs += '</table>';
-	dom_subs.innerHTML = list_subs;
+	list_subs += '</ul>';
+	dom_subs.innerHTML += list_subs;
 };
 
 // return key of the object

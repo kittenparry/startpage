@@ -1,25 +1,45 @@
 <!DOCTYPE html>
-<html lang='en' dir='ltr'>
-
+<html lang="en">
 <head>
-	<meta charset='utf-8' />
-	<title>/</title>
-	<link rel='stylesheet' type='text/css' href='style/style.css' />
+	<meta charset="utf-8">
+
+	<title>/startpage</title>
+
+	<meta name="description" content="startpage">
+	<meta name="author" content="tagged">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/skeleton.css">
+	<link rel="stylesheet" href="css/startpage.css">
+
+	<link rel="icon" type="image/png" href="images/favicon.png">
 </head>
-
 <body>
-	<div id='terminal' class='display-div'>
-		<form autocomplete='off' id='search-form' class='some-pad'>
-			[edvin@ ~]$ <input id='search-input' title='search' type='text' autofocus='autofocus' autocomplete='off' spellcheck='false' placeholder='r sub or rn sub for reddit, anything else to search..' />
-			<ul id='search-suggestions'></ul>
-		</form>
+	<div class="container">
+		<div class="row">
+			<div class="four columns" style="margin-top: 5%">
+				<div id="div-services">
+					<div id="list-services"><h5>services</h5></div>
+				</div>
+				<div id="div-sites">
+					<div id="list-sites"><h6>sites</h6></div>
+				</div>
+				<div id="div-subs">
+					<div id="list-subs"><h6>reddit</h6></div>
+				</div>
+			</div>
+			<div class="eight columns" style="margin-top: 15%">
+				<div id="terminal">
+					<form autocomplete="off" id="search-form">
+						[startpage@ ~]$ <input id="search-input" title="search" type="text" autofocus="autofocus" autocomplete="off" spellcheck="false" placeholder="r sub | rn sub (sort new) | search" />
+						<ul id="search-suggestions"></ul>
+					</form>
+				</div>
+			</div>
+		</div>
 	</div>
-	<div id='div-sites' class='display-div'>
-		<div class='some-pad' id='list-sites'></div>
-	</div>
-	<div id='div-subs' class='display-div'>
-		<div class='some-pad' id='list-subs'></div>
-	</div>
-
-	<script src='script/script.js'></script>
+	<script src="scripts/links.js"></script>
+	<script src="scripts/startpage.js"></script>
 </body>
+</html>
