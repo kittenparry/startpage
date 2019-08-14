@@ -3,26 +3,26 @@ let curSearch = "";
 document.getElementById('search-input').addEventListener('input', e => {
 	let key = e.target.value;
 	let list = [];
-    let result = [];
-    
+	let result = [];
+
 	if (Object.keys(dict_services).includes(key)) {
 		result.push(get_key_by_val(dict_services, dict_services[key]));
 		result.push(dict_services[key].split('|')[0], dict_services[key].split('|')[1]);
 
 		list.push(`${result[0]}:\t${result[1]} (${result[2]})`);
 	} else if (Object.keys(dict_sites).includes(key)) {
-        list.push(`${get_key_by_val(dict_sites, dict_sites[key])}:\t${dict_sites[key]}`);
-        
-        /* RegEx: Matches if the first none space character is an "r", optionally followed my an "n", followed by a whitespace */
-	} else if (/^ *rn? /.test(key)) {
-        let _timed = key.trim();
+		list.push(`${get_key_by_val(dict_sites, dict_sites[key])}:\t${dict_sites[key]}`);
 
-        let isNew = _timed[1] === "n"
-        // gets string after r || rn without whitespaces
-		let query = _timed.substring(2).replace(/ /g,'');
+		/* RegEx: Matches if the first none space character is an "r", optionally followed my an "n", followed by a whitespace */
+	} else if (/^ *rn? /.test(key)) {
+		let _timed = key.trim();
+
+		let isNew = _timed[1] === "n"
+		// gets string after r || rn without whitespaces
+		let query = _timed.substring(2).replace(/ /g, '');
 		let sub = '';
-        
-        let pre = isNew ? 'reddit:new/' : 'reddit/';
+
+		let pre = isNew ? 'reddit:new/' : 'reddit/';
 
 		if (query) {
 			if (Object.keys(dict_reddit).includes(query)) {
@@ -33,13 +33,13 @@ document.getElementById('search-input').addEventListener('input', e => {
 			list.push(`${pre}${sub}`);
 		} else {
 			list.push(`${pre}..`);
-        }
-        
-        curSearch = `https://www.reddit.com/r/${sub}/${isNew ? "new" : ""}`;
+		}
+
+		curSearch = `https://www.reddit.com/r/${sub}/${isNew ? "new" : ""}`;
 	} else if (key.trim() !== '') {
-        list.push(`search:\t${key}`);
-        
-        curSearch = `http://duckduckgo.com/?q=${key}`;;
+		list.push(`search:\t${key}`);
+
+		curSearch = `http://duckduckgo.com/?q=${key}`;;
 	}
 
 	let body = '';
@@ -65,8 +65,8 @@ document.getElementById('search-form').addEventListener('submit', e => {
 		} else if (Object.keys(dict_sites).includes(key)) {
 			window.location = `https://${dict_sites[key]}`;
 		} else if (curSearch) {
-            		window.location = curSearch;
-        	}
+			window.location = curSearch;
+		}
 	} catch (e) {
 		console.log(e);
 	}
