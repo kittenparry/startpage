@@ -44,7 +44,7 @@ h5, h6 {
 	padding-left: 3em;
 	font-weight: bold;
 	font-size: 1.6rem;
-	line-height: 1.6; 
+	line-height: 1.6;
 	letter-spacing: 0;
 }
 
@@ -54,7 +54,7 @@ h5, h6 {
 	width: 70%;
 	border: none;
 	font-size: 1em;
-	color: #fff;
+	color: #586e75;
 	cursor: default;
 	overflow: visible;
 }
