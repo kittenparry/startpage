@@ -5,9 +5,6 @@ document.getElementById('search-input').addEventListener('input', e => {
 	let list = [];
     let result = [];
     
-    console.log(key);
-    
-
 	if (Object.keys(dict_services).includes(key)) {
 		result.push(get_key_by_val(dict_services, dict_services[key]));
 		result.push(dict_services[key].split('|')[0], dict_services[key].split('|')[1]);
