@@ -4,9 +4,9 @@ html {
 
 body {
 	font-family: "Courier New", Courier, monospace, sans-serif;
-	background: #000 url("../images/wallpaper2.jpg") no-repeat center;
+	background: #000 url("../images/wallpaper.jpg") no-repeat center;
 	background-size: cover;
-	color: #fff;
+	color: #586e75;
 	min-height: 98%;
 	height: 98%;
 }
@@ -69,7 +69,7 @@ h5, h6 {
 
 #div-services, #div-sites, #div-subs, #terminal {
 	border: 1px solid #586e75;
-	background-color: rgba(0, 0, 0, 0.7);
+	background-color: rgba(256, 246, 227, 0.95);
 	margin-bottom: 0.5em;
 	padding: 0.5em;
 }
