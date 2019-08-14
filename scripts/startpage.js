@@ -1,7 +1,12 @@
+let curSearch = "";
+
 document.getElementById('search-input').addEventListener('input', e => {
 	let key = e.target.value;
 	let list = [];
-	let result = [];
+    let result = [];
+    
+    console.log(key);
+    
 
 	if (Object.keys(dict_services).includes(key)) {
 		result.push(get_key_by_val(dict_services, dict_services[key]));
@@ -9,30 +14,35 @@ document.getElementById('search-input').addEventListener('input', e => {
 
 		list.push(`${result[0]}:\t${result[1]} (${result[2]})`);
 	} else if (Object.keys(dict_sites).includes(key)) {
-		list.push(`${get_key_by_val(dict_sites, dict_sites[key])}:\t${dict_sites[key]}`);
-	} else if (key.split(' ')[0] == 'r' || key.split(' ')[0] == 'rn') {
-		let skey = key.split(' ');
+        list.push(`${get_key_by_val(dict_sites, dict_sites[key])}:\t${dict_sites[key]}`);
+        
+        /* RegEx: Matches if the first none space character is an "r", optionally followed my an "n", followed by a whitespace */
+	} else if (/^ *rn? /.test(key)) {
+        let _timed = key.trim();
+
+        let isNew = _timed[1] === "n"
+        // gets string after r || rn without whitespaces
+		let query = _timed.substring(2).replace(/ /g,'');
 		let sub = '';
-		let pre = '';
-		if (skey[0] == 'rn') {
-			pre = 'reddit:new/';
-		} else {
-			pre = 'reddit/';
-		}
-		if (skey[1]) {
-			if (Object.keys(dict_reddit).includes(skey[1])) {
-				sub = dict_reddit[skey[1]];
+        
+        let pre = isNew ? 'reddit:new/' : 'reddit/';
+
+		if (query) {
+			if (Object.keys(dict_reddit).includes(query)) {
+				sub = dict_reddit[query];
 			} else {
-				sub = skey[1];
+				sub = query;
 			}
 			list.push(`${pre}${sub}`);
 		} else {
 			list.push(`${pre}..`);
-		}
-	} else if (key == '') {
-
-	} else {
-		list.push(`search:\t${key}`);
+        }
+        
+        curSearch = `https://www.reddit.com/r/${sub}/${isNew ? "new" : ""}`;
+	} else if (key.trim() !== '') {
+        list.push(`search:\t${key}`);
+        
+        curSearch = `http://duckduckgo.com/?q=${key}`;;
 	}
 
 	let body = '';
@@ -55,28 +65,9 @@ document.getElementById('search-form').addEventListener('submit', e => {
 		if (Object.keys(dict_services).includes(key)) {
 			let url = dict_services[key].split('|')[1];
 			window.location = `${url}`;
-		} else if (Object.keys(dict_sites).includes(key)) {
-			window.location = `https://${dict_sites[key]}`;
-		} else if (key.split(' ')[0] == 'r' || key.split(' ')[0] == 'rn') {
-			let skey = key.split(' ');
-			let app = '';
-			if (skey[0] == 'rn') {
-				app = 'new';
-			}
-			let sub = '';
-			if (skey[1]) {
-				if (Object.keys(dict_reddit).includes(skey[1])) {
-					sub = dict_reddit[skey[1]];
-				} else {
-					sub = skey[1];
-				}
-				window.location = `https://www.reddit.com/r/${sub}/${app}`;
-			}
-		} else if (key == '') {
-
-		} else {
-			window.location = `http://duckduckgo.com/?q=${key}`;
-		}
+		} else if (curSearch) {
+            window.location = curSearch;
+        }
 	} catch (e) {
 		console.log(e);
 	}
